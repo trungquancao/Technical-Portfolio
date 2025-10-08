@@ -1,29 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trung Quan Cao</title>
-  <!-- Preload Tailwind fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root { color-scheme: light dark; }
-    html { scroll-behavior: smooth; }
-    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
-    /* al-folio-ish link underline */
-    .link { position: relative; }
-    .link:after { content: ""; position: absolute; left: 0; bottom: -2px; height: 2px; width: 100%; transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
-    .link:hover:after { transform: scaleX(1); }
-    .link { color: rgb(37 99 235); }
-    .link:after { background: rgb(37 99 235); }
-    @media (prefers-color-scheme: dark) {
-      .link { color: rgb(96 165 250); }
-      .link:after { background: rgb(96 165 250); }
-    }
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trung Quan Cao</title>
+    <!-- Preload Tailwind fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root { color-scheme: light dark; }
+      html { scroll-behavior: smooth; }
+      body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+      /* al-folio-ish link underline */
+      .link { position: relative; }
+      .link:after { content: ""; position: absolute; left: 0; bottom: -2px; height: 2px; width: 100%; transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+      .link:hover:after { transform: scaleX(1); }
+      .link { color: rgb(37 99 235); }
+      .link:after { background: rgb(37 99 235); }
+      @media (prefers-color-scheme: dark) {
+        .link { color: rgb(96 165 250); }
+        .link:after { background: rgb(96 165 250); }
+      }
     /* ABS button custom styling removed due to unsupported @apply; button styles moved inline */
   </style>
 </head>
@@ -50,17 +50,16 @@
     /* additional styles ... */
   </style>
 </head>
-  
+
 <body class="bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
   <!-- Top Nav (static; only About is active) -->
   <header class="sticky top-0 z-40 border-b border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur bg-white/75 dark:bg-zinc-950/60">
     <div class="mx-auto max-w-4xl px-4">
       <div class="flex items-center gap-4 py-3">
-        <a href="#" class="text-lg font-semib old"></a>
+        <a href="#" class="text-lg font-semibold link2">Trung Quan Cao</a>
         <nav class="ml-auto flex items-center gap-1 text-sm">
           <a class="px-3 py-1.5 rounded-md font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" href="#">About</a>
-          <!-- <span class="px-3 py-1.5 rounded-md text-zinc-500">Publications</span> -->
-          <span class="px-3 py-1.5 rounded-md text-zinc-500">CV</span>
+          <a class="px-3 py-1.5 rounded-md text-zinc-500" href="./cv.html">CV</a>
         </nav>
       </div>
     </div>
@@ -73,17 +72,15 @@
       <div>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Trung Quan Cao</h1>
         <p class="mt-2 text-base sm:text-lg text-zinc-600 dark:text-zinc-400">
-          Bachelor of Science in Artificial Intelligence applicant for Fall - 2026
+          Bachelor of Science applicant for Fall - 2026
         </p>
         <div class="mt-4 prose prose-zinc dark:prose-invert max-w-none">
           <p>
-            I am an ambitious candidate with award-winner at ISEF, ViSEF and
-            national informatics contests. I passionate about mathematics, physics and artificial intelligence. 
+            I grew up in Quang Tri, Vietnam, and I’m currently a first-year undergraduate at VNUHCM – University of Science majoring in Artificial Intelligence. I’m pursuing opportunities to advance my research and academic excellence.
+            My interests include mathematics, physics, and machine learning.  
           </p>
           
-          <p class="mt-2">
-            I am seeking an opportunity to advance my research and academic excellence.
-          </p>
+          
         </div>
       </div>
       <img src="quancao.png" alt="Trung Quan Cao" class="w-40 h-40 sm:w-48 sm:h-48 rounded-lg object-cover">

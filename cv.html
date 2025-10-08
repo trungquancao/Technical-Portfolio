@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Trung Quan Cao</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Simple black square favicon to match index -->
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='black'/></svg>">
+
+  <style>
+    :root { color-scheme: light dark; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    /* Make the PDF viewer responsive */
+    .pdf-wrap { height: calc(100vh - 160px); } /* header + paddings */
+    @media (max-width: 640px) {
+      .pdf-wrap { height: calc(100vh - 200px); }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100">
+  <!-- Top Nav -->
+  <header class="sticky top-0 z-40 border-b border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur bg-white/75 dark:bg-zinc-950/60">
+    <div class="mx-auto max-w-4xl px-4">
+      <div class="flex items-center gap-4 py-3">
+        <a href="./index.html" class="text-lg font-semibold link">Trung Quan Cao</a>
+        <nav class="ml-auto flex items-center gap-1 text-sm">
+          <a class="px-3 py-1.5 rounded-md text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-100 dark:hover:bg-zinc-900 transition-colors" href="./index.html">About</a>
+          <a class="px-3 py-1.5 rounded-md font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900" href="./cv.html">CV</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="mx-auto max-w-4xl px-4 py-8">
+    <section class="mb-6">
+      <div class="flex items-center justify-between gap-4">
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Curriculum Vitae</h1>
+
+        <!-- Downloads button (blue, with “hold”/press effect) -->
+        <a
+          href="./cv.pdf"
+          download
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold
+                 bg-blue-600 text-white shadow-sm
+                 hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
+                 active:scale-[0.98] active:translate-y-[1px] active:shadow-inner
+                 transition-transform transition-colors"
+          aria-label="Download my CV as PDF"
+        >
+          Downloads
+          <!-- download icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 3.999a1 1 0 0 1-1.414 0l-4-3.999A1 1 0 1 1 8.707 10.293L11 12.586V4a1 1 0 0 1 1-1z"/>
+            <path d="M5 20a1 1 0 1 1 0-2h14a1 1 0 1 1 0 2H5z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">You can view the CV below or download the PDF.</p>
+    </section>
+
+    <!-- PDF viewer (iframe fallback to object) -->
+    <section class="pdf-wrap rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+      <!-- Try <iframe> first (better zoom on mobile for many browsers) -->
+      <iframe
+        src="./cv.pdf#view=FitH"
+        title="Trung Quan Cao — CV"
+        class="w-full h-full"
+      ></iframe>
+
+      <!-- Fallback for browsers that block iframe PDFs -->
+      <object
+        data="./cv.pdf#view=FitH"
+        type="application/pdf"
+        class="w-full h-full hidden"
+      >
+        <div class="p-6 text-sm">
+          Your browser can’t display PDFs inline. Please
+          <a href="./cv.pdf" class="link">download the CV</a>.
+        </div>
+      </object>
+    </section>
+  </main>
+
+  <footer class="mx-auto max-w-4xl px-4 mt-10 mb-8 text-xs text-zinc-500 dark:text-zinc-400">
+    <p>© <span id="y"></span> Trung Quan Cao. Hosted by GitHub Pages.</p>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
