@@ -18,10 +18,15 @@
     html { scroll-behavior: smooth; }
     body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
     /* Make the PDF viewer responsive */
-    .pdf-wrap { height: calc(100vh - 160px); } /* header + paddings */
-    @media (max-width: 640px) {
-      .pdf-wrap { height: calc(100vh - 200px); }
+    .pdf-wrap {
+    height: calc(100dvh - 160px);
+    overflow: auto;                    /* ← allow scroll inside container */
+    -webkit-overflow-scrolling: touch; /* ← smooth touch scrolling on iOS */
     }
+    @media (max-width: 640px) {
+      .pdf-wrap { height: calc(100dvh - 200px); }
+    }
+    .pdf-frame { width:100%; height:100%; border:0; display:block; } 
   </style>
 </head>
 
@@ -69,14 +74,13 @@
 
     <!-- PDF viewer (iframe fallback to object) -->
     <section class="pdf-wrap rounded-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-      <!-- Try <iframe> first (better zoom on mobile for many browsers) -->
       <iframe
         src="./cv.pdf#view=FitH"
         title="Trung Quan Cao — CV"
-        class="w-full h-full"
+        class="pdf-frame"
+        scrolling="yes"  
       ></iframe>
 
-      <!-- Fallback for browsers that block iframe PDFs -->
       <object
         data="./cv.pdf#view=FitH"
         type="application/pdf"
